@@ -1,0 +1,21 @@
+type TokenId = text;
+type Order = 
+ record {
+   amount: float64;
+   id: nat;
+   isBuy: bool;
+   owner: principal;
+   price: float64;
+   tokenId: TokenId;
+ };
+service : {
+  createToken: (TokenId, float64) -> ();
+  deposit: (TokenId, float64) -> ();
+  executeTrade: (nat, nat) -> ();
+  getOrder: (nat) -> (opt Order) query;
+  getOrderBook: (TokenId) -> (vec Order) query;
+  getTokenBalance: (TokenId) -> (opt float64) query;
+  getUserBalance: (principal, TokenId) -> (opt float64) query;
+  placeOrder: (TokenId, bool, float64, float64) -> (nat);
+  withdraw: (TokenId, float64) -> ();
+}

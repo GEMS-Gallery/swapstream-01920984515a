@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEX on Internet Computer</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app">
+        <h1>DEX on Internet Computer</h1>
+        <div id="user-info">
+            <h2>User Info</h2>
+            <p>Principal ID: <span id="principal-id"></span></p>
+            <h3>Balances</h3>
+            <ul id="user-balances"></ul>
+        </div>
+        <div id="token-management">
+            <h2>Token Management</h2>
+            <input type="text" id="create-token-id" placeholder="Token ID">
+            <input type="number" id="create-token-supply" placeholder="Initial Supply">
+            <button id="create-token-btn">Create Token</button>
+        </div>
+        <div id="order-placement">
+            <h2>Place Order</h2>
+            <input type="text" id="order-token-id" placeholder="Token ID">
+            <select id="order-type">
+                <option value="buy">Buy</option>
+                <option value="sell">Sell</option>
+            </select>
+            <input type="number" id="order-amount" placeholder="Amount">
+            <input type="number" id="order-price" placeholder="Price">
+            <button id="place-order-btn">Place Order</button>
+        </div>
+        <div id="order-book">
+            <h2>Order Book</h2>
+            <input type="text" id="order-book-token-id" placeholder="Token ID">
+            <button id="get-order-book-btn">Get Order Book</button>
+            <div id="order-book-display"></div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
